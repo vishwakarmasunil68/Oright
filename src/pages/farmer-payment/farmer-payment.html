@@ -1,0 +1,50 @@
+<!--
+  Generated template for the FarmerPaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>FarmerPayment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row style="border:1px solid #808B96;">
+    <ion-col col-3 class="flex_center_content">
+      Month Year
+    </ion-col>
+    <!-- <div style="width: 1px;;border-left: 1px solid #99A3A4;height: ;"></div> -->
+    <ion-col col-3 class="flex_center_content" style="border-left: 1px solid #808B96;" class="flex_center_content">
+      Volume (L)
+    </ion-col>
+    <ion-col text-center col-6 style="border-left: 1px solid #808B96;" no-padding>
+      Payment
+      <ion-row no-padding>
+        <ion-col no-padding col-6 style="border:1px solid #99A3A4;border-left: none;border-bottom: none;">
+          Due (Rs)
+        </ion-col>
+        <ion-col no-padding col-6 style="border:1px solid #99A3A4;border-left: none;border-right: none;border-bottom: none;">
+          Recieved (Rs)
+        </ion-col>
+      </ion-row>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row style="border:1px solid #99A3A4;border-top: none;" *ngFor="let item of paymentDetails">
+    <ion-col col-3 class="flex_center_content" text-wrap>
+      {{item.Month}}
+    </ion-col>
+    <ion-col col-3 class="flex_center_content" style="border-left: 1px solid #99A3A4;" class="flex_center_content" text-wrap>
+      {{item.Volume}}
+    </ion-col>
+    <ion-col col-3 class="flex_center_content" style="border-left: 1px solid #99A3A4;" class="flex_center_content" text-wrap>
+      {{item.Amount_Due}}
+    </ion-col>
+    <ion-col col-3 class="flex_center_content" style="border-left: 1px solid #99A3A4;" class="flex_center_content" text-wrap>
+      Rs. {{item.AmountPaid}}
+    </ion-col>
+  </ion-row>
+</ion-content>

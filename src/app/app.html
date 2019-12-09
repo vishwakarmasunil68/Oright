@@ -1,0 +1,133 @@
+<ion-menu [content]="content">
+  <ion-content>
+    <div (click)="menuClicked('profile')"
+         style="display:block;text-align: center;align-items: center;justify-content: center;padding-top: 20px;">
+      <!-- <ion-avatar item-start> -->
+      <img style="height:50px;background-color: transparent;"
+           src="assets/imgs/logo.png">
+      <!-- </ion-avatar> -->
+      <p style="font-weight: 900;font-size: 17px;color: #757575;margin: 15px;">Username</p>
+      <div style="border: 1px solid #EEEEEE;"></div>
+    </div>
+
+
+    <ion-list no-padding>
+
+      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('dashboard')" style="">
+        <ion-grid no-padding>
+          <ion-row no-padding class="center_item">
+            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_report.png">
+            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Dashboard</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('view_profile')" style="">
+        <ion-grid no-padding>
+          <ion-row no-padding class="center_item">
+            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_report.png">
+            <p style="margin-left: 20px;font-size: 15px;color:#757575;">View Profile</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('payments')" style="">
+        <ion-grid no-padding>
+          <ion-row no-padding class="center_item">
+            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_report.png">
+            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Payments</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('change_password')" style="">
+        <ion-grid no-padding>
+          <ion-row no-padding class="center_item">
+            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_report.png">
+            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Change Password</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('logout')" style="">
+        <ion-grid no-padding>
+          <ion-row no-padding class="center_item">
+            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_logout.png">
+            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Logout</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <!--      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="reportSubMenu()" style="">-->
+      <!--        <ion-grid no-padding>-->
+      <!--          <ion-row no-padding class="center_item">-->
+      <!--            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_report.png">-->
+      <!--            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Reports</p>-->
+      <!--          </ion-row>-->
+      <!--        </ion-grid>-->
+      <!--      </ion-item>-->
+
+      <!--      <div no-padding no-lines *ngIf="submenuVisible" class="item-icon-left" menu-close-->
+      <!--           style="padding-left: 15px;margin-top: -7px;">-->
+      <!--        <ion-item no-padding no-lines style="margin-left: 23px;margin-top: -7px;">-->
+      <!--          <ion-grid no-padding>-->
+      <!--            <ion-row no-padding (click)="menuClicked('assignment_in_process')">-->
+      <!--              <ion-col no-padding class="center_item">-->
+      <!--                <img style="width: 20px;height: 20px;" src="assets/imgs/ic_calendar.png">-->
+      <!--                <p style="margin-left: 20px;font-size: 15px;color:#757575;">Daily</p>-->
+      <!--              </ion-col>-->
+      <!--            </ion-row>-->
+      <!--          </ion-grid>-->
+      <!--        </ion-item>-->
+      <!--        <ion-item no-padding no-lines style="margin-left: 23px;margin-top: -7px;">-->
+      <!--          <ion-grid no-padding>-->
+      <!--            <ion-row no-padding (click)="menuClicked('assignment_enquiries')">-->
+      <!--              <ion-col no-padding class="center_item">-->
+      <!--                <img style="width: 20px;height: 20px;" src="assets/imgs/ic_calendar.png">-->
+      <!--                <p style="margin-left: 20px;font-size: 15px;color:#757575;">Weekly</p>-->
+      <!--              </ion-col>-->
+      <!--            </ion-row>-->
+      <!--          </ion-grid>-->
+      <!--        </ion-item>-->
+      <!--        <ion-item no-padding no-lines style="margin-left: 23px;margin-top: -7px;">-->
+      <!--          <ion-grid no-padding>-->
+      <!--            <ion-row no-padding (click)="menuClicked('assignment_delivered')">-->
+      <!--              <ion-col no-padding class="center_item">-->
+      <!--                <img style="width: 20px;height: 20px;" src="assets/imgs/ic_calendar.png">-->
+      <!--                <p style="margin-left: 20px;font-size: 15px;color:#757575;">Monthly</p>-->
+      <!--              </ion-col>-->
+      <!--            </ion-row>-->
+      <!--          </ion-grid>-->
+      <!--        </ion-item>-->
+      <!--        <ion-item no-padding no-lines style="margin-left: 23px;margin-top: -7px;">-->
+      <!--          <ion-grid no-padding>-->
+      <!--            <ion-row no-padding (click)="menuClicked('assignment_expired')">-->
+      <!--              <ion-col no-padding class="center_item">-->
+      <!--                <img style="width: 20px;height: 20px;" src="assets/imgs/ic_calendar.png">-->
+      <!--                <p style="margin-left: 20px;font-size: 15px;color:#757575;">Yearly</p>-->
+      <!--              </ion-col>-->
+      <!--            </ion-row>-->
+      <!--          </ion-grid>-->
+      <!--        </ion-item>-->
+      <!--      </div>-->
+
+
+      <!--      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('setting')"-->
+      <!--                style="margin-top: -7px;">-->
+      <!--        <ion-grid no-padding>-->
+      <!--          <ion-row no-padding class="center_item">-->
+      <!--            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_setting.png">-->
+      <!--            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Settings</p>-->
+      <!--          </ion-row>-->
+      <!--        </ion-grid>-->
+      <!--      </ion-item>-->
+
+      <!--      <ion-item no-padding no-lines class="item-icon-left" menu-close (click)="menuClicked('logout')"-->
+      <!--                style="margin-top: -7px;">-->
+      <!--        <ion-grid no-padding>-->
+      <!--          <ion-row class="center_item">-->
+      <!--            <img style="width: 25px;height: 25px;margin-left: 20px;" src="assets/imgs/ic_logout.png">-->
+      <!--            <p style="margin-left: 20px;font-size: 15px;color:#757575;">Logout</p>-->
+      <!--          </ion-row>-->
+      <!--        </ion-grid>-->
+      <!--      </ion-item>-->
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

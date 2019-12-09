@@ -1,0 +1,59 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>-->
+<!--  <ion-navbar color="primary">-->
+<!--    <ion-title>Login</ion-title>-->
+<!--  </ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content padding>
+  <div style="height: 100%;display: block;text-align: center;align-items: center;justify-content: center;">
+    <div style="height: 40%">
+      <img src="assets/imgs/logo.png" style="width: 300px;margin-top: 35%;">
+    </div>
+    <ion-item no-lines style="padding-left: 30px;padding-right: 30px;">
+      <input class="login_input" placeholder="" type="text" [(ngModel)]="email">
+    </ion-item>
+    <ion-item no-lines style="padding-left: 30px;padding-right: 30px;">
+      <input class="login_input" placeholder="" type="password" [(ngModel)]="password">
+    </ion-item>
+    <!--    <ion-item>-->
+    <!--      <p style="color: #000000;font-size: 16px;">Username</p>-->
+    <!--      <input placeholder="" type="text" [(ngModel)]="email"-->
+    <!--             style="width: 100%;padding-left: 10px;padding-right: 10px;border: 1px solid transparent;">-->
+    <!--    </ion-item>-->
+
+    <!--    <ion-item style="margin-top: 15px;">-->
+    <!--      <p style="color: #000000;font-size: 16px;">Password</p>-->
+    <!--      <input placeholder="" type="{{password_type}}" [(ngModel)]="password"-->
+    <!--             style="width: 100%;padding-left: 10px;padding-right: 10px;border: 1px solid transparent;">-->
+    <!--      <button *ngIf="!showPass" ion-button clear color="dark" style="height:30px;margin-top: 20px;" type="button"-->
+    <!--              item-right (click)="showHide()">-->
+    <!--        <ion-icon name="eye" style="font-size:25px;"></ion-icon>-->
+    <!--      </button>-->
+    <!--      <button *ngIf="showPass" ion-button clear color="dark" style="height:30px;margin-top: 20px;" type="button"-->
+    <!--              item-right (click)="showHide()">-->
+    <!--        <ion-icon name="eye-off" style="font-size:25px;"></ion-icon>-->
+    <!--      </button>-->
+    <!--    </ion-item>-->
+
+    <ion-item (click)="forgotPassword()" text-center no-lines style="text-align: right;margin-top: 10px;">
+      <p style="">Forgot Password?</p>
+    </ion-item>
+    <ion-item no-lines
+              style="width: 100%;display: flex;text-align: center;justify-content: center;align-items: center;">
+      <div (click)="callLoginAPI()"
+           style="display: flex;text-align: center;justify-content: center;align-items: center;">
+        <div
+          style="background-color: #488aff;width: 80%;display: flex;text-align: center;justify-content: center;align-items: center;border-radius: 20px;height: 40px;">
+          <p style="font-size: 15px;font-weight: bolder;color: #FFFFFF;">Log In</p>
+        </div>
+      </div>
+    </ion-item>
+
+  </div>
+</ion-content>

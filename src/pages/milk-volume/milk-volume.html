@@ -1,0 +1,56 @@
+<!--
+  Generated template for the MilkVolumePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>MilkVolume</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-row>
+        <ion-col col-5 text-center>
+          <ion-item text-center no-padding>
+            <ion-select [(ngModel)]="selected_type" (ionChange)="onTypeSelected()" text-wrap style="max-width: 100% !important;">
+              <ion-option *ngFor="let type of types" value="{{type}}">{{type}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-7 text-center>
+          <ion-item *ngIf="is_year" text-center no-padding>
+            <ion-label>Year</ion-label>
+            <ion-select [(ngModel)]="selected_year" (ionChange)="onYearSelected()" text-wrap style="max-width: 100% !important;">
+              <ion-option *ngFor="let year of years" value="{{year}}">{{year}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="is_quater" text-center no-padding>
+            <ion-label>Quaterly</ion-label>
+            <ion-select [(ngModel)]="selected_quater" (ionChange)="onQuaterSelected()" text-wrap style="max-width: 100% !important;">
+              <ion-option *ngFor="let quater of quaters" value="{{quater}}">{{quater}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="is_month" text-center no-padding>
+            <ion-label>Monthly</ion-label>
+            <ion-select [(ngModel)]="selected_month" (ionChange)="onMonthSelected()" text-wrap style="max-width: 100% !important;">
+              <ion-option *ngFor="let month of months" value="{{month}}">{{month}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="is_daily" text-center no-padding>
+            <ion-item>
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" (ngModelChange)="dateChanged()" [(ngModel)]="selected_time" text-wrap style="max-width: 100% !important;"></ion-datetime>
+            </ion-item>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas (chartClick)="chartClicked($event)"></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

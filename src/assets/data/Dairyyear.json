@@ -1,0 +1,155 @@
+[
+  {
+    "year": "2019",
+    "data": [
+      {
+        "name": "dairy1",
+        "value": 12
+      },
+      {
+        "name": "dairy2",
+        "value": 10
+      },
+      {
+        "name": "dairy3",
+        "value": 7
+      },
+      {
+        "name": "dairy4",
+        "value": 4
+      },
+      {
+        "name": "dairy5",
+        "value": 17
+      },
+      {
+        "name": "dairy6",
+        "value": 25
+      },
+      {
+        "name": "dairy7",
+        "value": 20
+      },
+      {
+        "name": "dairy8",
+        "value": 2
+      }
+    ],
+    "quaterly": [
+      {
+        "name": "Jan-Apr",
+        "value": 56
+      },
+      {
+        "name": "May-Aug",
+        "value": 30
+      },
+      {
+        "name": "Sep-Dec",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "data": [
+      {
+        "name": "dairy1",
+        "value": 43
+      },
+      {
+        "name": "dairy2",
+        "value": 12
+      },
+      {
+        "name": "dairy3",
+        "value": 23
+      },
+      {
+        "name": "dairy4",
+        "value": 24
+      },
+      {
+        "name": "dairy5",
+        "value": 32
+      },
+      {
+        "name": "dairy6",
+        "value": 14
+      },
+      {
+        "name": "dairy7",
+        "value": 17
+      },
+      {
+        "name": "dairy8",
+        "value": 20
+      }
+    ],
+    "quaterly": [
+      {
+        "name": "Jan-Apr",
+        "value": 56
+      },
+      {
+        "name": "May-Aug",
+        "value": 30
+      },
+      {
+        "name": "Sep-Dec",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "year": "2017",
+    "data": [
+      {
+        "name": "dairy1",
+        "value": 34
+      },
+      {
+        "name": "dairy2",
+        "value": 23
+      },
+      {
+        "name": "dairy3",
+        "value": 22
+      },
+      {
+        "name": "dairy4",
+        "value": 33
+      },
+      {
+        "name": "dairy5",
+        "value": 20
+      },
+      {
+        "name": "dairy6",
+        "value": 25
+      },
+      {
+        "name": "dairy7",
+        "value": 20
+      },
+      {
+        "name": "dairy8",
+        "value": 14
+      }
+    ],
+    "quaterly": [
+      {
+        "name": "Jan-Apr",
+        "value": 56
+      },
+      {
+        "name": "May-Aug",
+        "value": 30
+      },
+      {
+        "name": "Sep-Dec",
+        "value": 45
+      }
+    ]
+  }
+]

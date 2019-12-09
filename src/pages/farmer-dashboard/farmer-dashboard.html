@@ -1,0 +1,188 @@
+<ion-header>
+  <ion-navbar hideBackButton color="theme">
+    <ion-buttons left style="display: flex;">
+      <button (click)="openMenu()" style="background: transparent;">
+        <img src="assets/imgs/ic_ham.png" style="width: 25px;"/>
+      </button>
+      <!--      <button (click)="openMenu()" style="background: transparent;">-->
+      <!--        <img src="assets/imgs/logo.png" style="width: 25px;"/>-->
+      <!--      </button>-->
+      <!--      <button (click)="openMenu()" style="background: transparent;">-->
+      <!--        <span text-color="title_white"-->
+      <!--              style="color: #FFFFFF;font-weight: 900;font-size: 17px;">App Name</span>-->
+      <!--      </button>-->
+    </ion-buttons>
+    <ion-title>DASHBOARD</ion-title>
+    <!--    <ion-buttons right>-->
+    <!--      <button style="background: transparent;" (click)="openNotifications()">-->
+    <!--        <img src="assets/imgs/ic_notification.png" style="height: 20px;"/>-->
+    <!--      </button>-->
+    <!--    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!--  <ion-item>-->
+  <!--    <ion-label>Month</ion-label>-->
+  <!--    <ion-datetime displayFormat="MMM YYYY" pickerFormat="MMM YYYY" [(ngModel)]="selectedMonth"></ion-datetime>-->
+  <!--  </ion-item>-->
+  <!--  <ion-row>-->
+  <!--    <ion-col col-3>-->
+  <!--      <img src="assets/imgs/ic_profile_pic.png">-->
+  <!--    </ion-col>-->
+  <!--    <ion-col col-9>-->
+  <!--      <p style="color: #757575;font-size: 20px;font-weight: 900;margin: 5px !important;margin-top: 10px !important;">Sunil Vishwakarma</p>-->
+  <!--      <p style="margin: 5px !important;color: #757575;">Farmer</p>-->
+  <!--      <div style="display: flex;align-items: center;">-->
+  <!--        <ion-icon ios="ios-pin" md="md-pin"></ion-icon>-->
+  <!--        <p style="margin: 5px !important;color: #757575;">Malviya Nager, New Delhi, India</p>-->
+  <!--      </div>-->
+  <!--    </ion-col>-->
+  <!--  </ion-row>-->
+
+  <div>
+    <ion-card style="background-color: #EAEDED;">
+      <ion-card-content>
+        <ion-row>
+          <ion-col col-6>
+            <ion-datetime displayFormat="MMM YYYY" pickerFormat="MMM YYYY" [(ngModel)]="selectedMonth" (ngModelChange)="onDateChanged()"></ion-datetime>
+          </ion-col>
+          <ion-col col-6 text-center>
+            <div style="float: right;align-items: center;justify-content: center;" text-wrap>
+              <ion-select [(ngModel)]="milk_type" text-wrap style="max-width: 100% !important;" (ionChange)="onMilkChange($event)">
+                <ion-option value="0" selected="true" text-wrap>ALL</ion-option>
+                <ion-option value="1" text-wrap>Buffalo</ion-option>
+                <ion-option value="2" text-wrap>Cow</ion-option>
+                <ion-option value="3" text-wrap>Desi</ion-option>
+              </ion-select>
+            </div>
+          </ion-col>
+        </ion-row>
+        <!--        <div style="width: 100%;display: flex;">-->
+        <!--          <div style="width: 50%;">-->
+        <!--            <div style="display: flex;">-->
+        <!--&lt;!&ndash;              <p>Total</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;              <p style="margin-left: 15px;font-weight: bolder;color: #000000;size: 17px;">150</p>&ndash;&gt;-->
+        <!--              <ion-datetime displayFormat="MMM YYYY" pickerFormat="MMM YYYY" [(ngModel)]="selectedMonth"></ion-datetime>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--          <div style="width: 50%;">-->
+        <!--            <div text-end>-->
+        <!--              <ion-select [(ngModel)]="milk_type" text-wrap no-margin no-padding style="width: 100%;">-->
+        <!--                <ion-option value="cow" selected="true" text-wrap>Cow</ion-option>-->
+        <!--                <ion-option value="buffalo" text-wrap>Buffalo</ion-option>-->
+        <!--              </ion-select>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+  <ion-card>
+    <ion-card-header>
+      Current Monthly
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-6>
+          <div class="flex_center_content">
+            <div class="center_content"
+                 style="display:flex;width: 100px;height: 100px;border: 5px solid #99A3A4;border-radius: 50px;">
+              <p>{{total_quantity}} L</p>
+            </div>
+          </div>
+
+        </ion-col>
+        <ion-col col-6>
+          <div class="flex_center_content">
+            <div class="center_content"
+                 style="display:flex;width: 100px;height: 100px;border: 5px solid #99A3A4;border-radius: 50px;">
+              <p>Rs. {{total_price}}</p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Status
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-2 class="flex_center_content" text-wrap>
+          Dates
+        </ion-col>
+        <!-- <div style="width: 1px;;border-left: 1px solid #99A3A4;height: ;"></div> -->
+        <ion-col col-2 class="flex_center_content" text-wrap>
+          Quantiy
+        </ion-col>
+        <ion-col col-3 class="flex_center_content" text-wrap>
+          FAT/SNF
+        </ion-col>
+        <ion-col col-3 class="flex_center_content" text-wrap>
+          Amount Due
+        </ion-col>
+        <ion-col col-2>
+
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row *ngFor="let data of farmerArr;let i=index;" style="border: 1px solid #99A3A4;border-radius: 7px;"
+               margin-top>
+        <ion-col col-2 class="flex_center_content" (click)="openDailyReport(data)">
+          {{data.Start_Date}} - {{data.End_Date}}
+        </ion-col>
+        <!-- <div style="width: 1px;;border-left: 1px solid #99A3A4;height: ;"></div> -->
+        <ion-col col-2 style="border-left: 1px solid #99A3A4;" class="flex_center_content" (click)="openDailyReport(data)">
+          {{data.Quantity}} L
+        </ion-col>
+        <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content" (click)="openDailyReport(data)">
+          {{data.Weighted_Avg_FAT}}/{{data.Weighted_Avg_SNF}}
+        </ion-col>
+        <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content" (click)="openDailyReport(data)">
+          Rs. {{data.Total_Amount_Due}}
+        </ion-col>
+        <ion-col col-2 style="border-left: 1px solid #99A3A4;" class="flex_center_content" (click)="payAmount(data)">
+          PAY
+        </ion-col>
+      </ion-row>
+
+      <!--        <ion-row style="border: 1px solid #99A3A4;border-radius: 7px;" margin-top (click)="openDailyReport()">-->
+      <!--          <ion-col col-3 class="flex_center_content">-->
+      <!--            11-20-->
+      <!--          </ion-col>-->
+      <!--          &lt;!&ndash; <div style="width: 1px;;border-left: 1px solid #99A3A4;height: ;"></div> &ndash;&gt;-->
+      <!--          <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content">-->
+      <!--            30 L-->
+      <!--          </ion-col>-->
+      <!--          <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content">-->
+      <!--            Rs. 500-->
+      <!--          </ion-col>-->
+      <!--          <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content">-->
+      <!--            Rs. 150-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+
+      <!--        <ion-row style="border: 1px solid #99A3A4;border-radius: 7px;" margin-top (click)="openDailyReport()">-->
+      <!--          <ion-col col-3 class="flex_center_content">-->
+      <!--            21-30-->
+      <!--          </ion-col>-->
+      <!--          &lt;!&ndash; <div style="width: 1px;;border-left: 1px solid #99A3A4;height: ;"></div> &ndash;&gt;-->
+      <!--          <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content">-->
+      <!--            20 L-->
+      <!--          </ion-col>-->
+      <!--          <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content">-->
+      <!--            Rs. 400-->
+      <!--          </ion-col>-->
+      <!--          <ion-col col-3 style="border-left: 1px solid #99A3A4;" class="flex_center_content">-->
+      <!--            Rs. 50-->
+      <!--          </ion-col>-->
+      <!--        </ion-row>-->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,115 @@
+<!--
+  Generated template for the FarmerProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Farmer Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label floating>First Name</ion-label>
+    <ion-input type="text" [(ngModel)]="first_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Last Name</ion-label>
+    <ion-input type="text" [(ngModel)]="last_name"></ion-input>
+  </ion-item>
+<!--  <ion-item>-->
+<!--    <ion-label floating>Username</ion-label>-->
+<!--    <ion-input type="text" [(ngModel)]="first_name"></ion-input>-->
+<!--  </ion-item>-->
+  <ion-item>
+    <ion-label floating>Phone</ion-label>
+    <ion-input type="text" [(ngModel)]="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Aadhar Number</ion-label>
+    <ion-input type="text" [(ngModel)]="aadhar_card"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>PAN Number</ion-label>
+    <ion-input type="text" [(ngModel)]="pan_number"></ion-input>
+  </ion-item>
+  <!--  <ion-row>-->
+  <!--    <ion-col col-3>-->
+  <!--      Farm-->
+  <!--    </ion-col>-->
+  <!--    <ion-col col-9>-->
+  <!--      -->
+  <!--    </ion-col>-->
+  <!--  </ion-row>-->
+
+  <ion-item>
+    <ion-label>Farms</ion-label>
+    <ion-select [(ngModel)]="selected_farm">
+      <ion-option *ngFor="let farms of farmDetail_arr" value="{{farms.Farm_ID}}">{{farms.Farm_Name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Collection Center</ion-label>
+    <ion-select [(ngModel)]="selected_cc">
+      <ion-option *ngFor="let collectionCenter of collectionCenter_arr" value="{{collectionCenter.CollectionCentre_ID}}">{{collectionCenter.CollectionCentre_Name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-row>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label floating>Cattle Cow</ion-label>
+        <ion-input type="text" [(ngModel)]="cattle_cow"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label floating>Calves Cow</ion-label>
+        <ion-input type="text" [(ngModel)]="calves_cow"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label floating>Cattle Buffalo</ion-label>
+        <ion-input type="text" [(ngModel)]="cattle_buffalo"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label floating>Calves Buffalo</ion-label>
+        <ion-input type="text" [(ngModel)]="calves_buffalo"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label floating>Cattle Desi</ion-label>
+        <ion-input type="text" [(ngModel)]="cattle_desi"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label floating>Calves Desi</ion-label>
+        <ion-input type="text" [(ngModel)]="calves_desi"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer no-lines no-border>
+  <ion-item no-lines
+            style="width: 100%;display: flex;text-align: center;justify-content: center;align-items: center;">
+    <div style="display: flex;text-align: center;justify-content: center;align-items: center;">
+      <div
+        style="background-color: #488aff;width: 80%;display: flex;text-align: center;justify-content: center;align-items: center;border-radius: 20px;height: 40px;" (click)="updateProfile()">
+        <p style="font-size: 15px;font-weight: bolder;color: #FFFFFF;">UPDATE</p>
+      </div>
+    </div>
+  </ion-item>
+</ion-footer>

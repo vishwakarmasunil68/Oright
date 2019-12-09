@@ -1,0 +1,200 @@
+<ion-header>
+  <ion-navbar hideBackButton color="theme">
+    <ion-buttons left style="display: flex;">
+      <button (click)="openMenu()" style="background: transparent;">
+        <img src="assets/imgs/ic_ham.png" style="width: 25px;"/>
+      </button>
+      <button (click)="openMenu()" style="background: transparent;">
+        <img src="assets/imgs/logo.png" style="width: 25px;"/>
+      </button>
+      <button (click)="openMenu()" style="background: transparent;">
+        <span text-color="title_white"
+              style="color: #FFFFFF;font-weight: 900;font-size: 17px;">App Name</span>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button style="background: transparent;" (click)="openNotifications()">
+        <img src="assets/imgs/ic_notification.png" style="height: 20px;"/>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager style="height:250px;margin-top: -25px;">
+    <ion-slide *ngFor="let image of images;let i = index;">
+      <ion-card class="flexcenter" style="border-radius: 20px;background-color: #FFFFFF;height: 180px;">
+        <img src="{{image}}" style="height:200px; width: 100%;">
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-scroll no-padding scrollX="true" style="width:100vw; height:100px;white-space: nowrap;overflow: hidden;" >
+    <ion-row nowrap no-padding>
+      <div style="margin-left: -15px !important;">
+        <ion-card style="border-radius: 20px;width: 300px;">
+          <ion-row>
+            <ion-col col-2 text-center>
+              <div style="display: flex;text-align: center;align-items: center;justify-content: center;height: 100%;">
+                <img src="assets/imgs/ic_notification_png.png" style="width: 40px;height: 40px"/>
+              </div>
+            </ion-col>
+            <ion-col col-7>
+              <p style="color: #000000;font-size: 16px; font-weight: 800">Title</p>
+              <p>Notification Content</p>
+            </ion-col>
+            <ion-col col-3 text-center>
+              <div style="display: flex;text-align: center;align-items: center;justify-content: center;height: 100%;">
+                <p style="color: #000000;font-size: 16px;font-weight: 600;">2 hours</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <div>
+        <ion-card style="border-radius: 20px;width: 300px;">
+          <ion-row>
+            <ion-col col-2 text-center>
+              <div style="display: flex;text-align: center;align-items: center;justify-content: center;height: 100%;">
+                <img src="assets/imgs/ic_notification_png.png" style="width: 40px;height: 40px"/>
+              </div>
+            </ion-col>
+            <ion-col col-7>
+              <p style="color: #000000;font-size: 16px; font-weight: 800">Title</p>
+              <p>Notification Content</p>
+            </ion-col>
+            <ion-col col-3 text-center>
+              <div style="display: flex;text-align: center;align-items: center;justify-content: center;height: 100%;">
+                <p style="color: #000000;font-size: 16px;font-weight: 600;">2 hours</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <div>
+        <ion-card style="border-radius: 20px;width: 300px;">
+          <ion-row>
+            <ion-col col-2 text-center>
+              <div style="display: flex;text-align: center;align-items: center;justify-content: center;height: 100%;">
+                <img src="assets/imgs/ic_notification_png.png" style="width: 40px;height: 40px"/>
+              </div>
+            </ion-col>
+            <ion-col col-7>
+              <p style="color: #000000;font-size: 16px; font-weight: 800">Title</p>
+              <p>Notification Content</p>
+            </ion-col>
+            <ion-col col-3 text-center>
+              <div style="display: flex;text-align: center;align-items: center;justify-content: center;height: 100%;">
+                <p style="color: #000000;font-size: 16px;font-weight: 600;">2 hours</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+
+    </ion-row>
+  </ion-scroll>
+
+<!--  <div class="ion-padding">-->
+
+<!--    <ion-card>-->
+<!--      <ion-card-header>-->
+<!--        Line Chart-->
+<!--      </ion-card-header>-->
+<!--      <ion-card-content>-->
+<!--        <canvas #lineCanvas></canvas>-->
+<!--      </ion-card-content>-->
+<!--    </ion-card>-->
+
+<!--    <ion-card>-->
+<!--      <ion-card-header>-->
+<!--        Bar Chart-->
+<!--      </ion-card-header>-->
+<!--      <ion-card-content>-->
+<!--        <canvas #barCanvas></canvas>-->
+<!--      </ion-card-content>-->
+<!--    </ion-card>-->
+
+<!--    <ion-card>-->
+<!--      <ion-card-header>-->
+<!--        Doughnut Chart-->
+<!--      </ion-card-header>-->
+<!--      <ion-card-content>-->
+<!--        <canvas #doughnutCanvas></canvas>-->
+<!--      </ion-card-content>-->
+<!--    </ion-card>-->
+<!--  </div>-->
+
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-row>
+          <ion-col col-5 text-center>
+            <ion-item text-center no-padding>
+              <ion-label>Type</ion-label>
+              <ion-select [(ngModel)]="selected_type" (ionChange)="onTypeSelected()" text-wrap style="max-width: 100% !important;">
+                <ion-option *ngFor="let type of types" value="{{type}}">{{type}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col col-7 text-center>
+            <ion-item *ngIf="is_year" text-center no-padding>
+              <ion-label>Year</ion-label>
+              <ion-select [(ngModel)]="selected_year" (ionChange)="onYearSelected()" text-wrap style="max-width: 100% !important;">
+                <ion-option *ngFor="let year of years" value="{{year}}">{{year}}</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item *ngIf="is_quater" text-center no-padding>
+              <ion-label>Quaterly</ion-label>
+              <ion-select [(ngModel)]="selected_quater" (ionChange)="onQuaterSelected()" text-wrap style="max-width: 100% !important;">
+                <ion-option *ngFor="let quater of quaters" value="{{quater}}">{{quater}}</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item *ngIf="is_month" text-center no-padding>
+              <ion-label>Monthly</ion-label>
+              <ion-select [(ngModel)]="selected_month" (ionChange)="onMonthSelected()" text-wrap style="max-width: 100% !important;">
+                <ion-option *ngFor="let month of months" value="{{month}}">{{month}}</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item *ngIf="is_daily" text-center no-padding>
+              <ion-item>
+                <ion-label>Date</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" (ngModelChange)="dateChanged()" [(ngModel)]="selected_time" text-wrap style="max-width: 100% !important;"></ion-datetime>
+              </ion-item>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas (chartClick)="chartClicked($event)"></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        FAT AND SNF Level Throughout the day
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #groupbarcanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Adultrent
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Farmer payment
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

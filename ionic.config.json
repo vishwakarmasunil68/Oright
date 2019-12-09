@@ -1,0 +1,7 @@
+{
+  "name": "cusapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
